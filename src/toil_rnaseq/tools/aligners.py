@@ -36,18 +36,25 @@ def run_star(job, r1_id, r2_id, star_index_url, wiggle=False, sort=False, save_a
                   '--genomeDir', star_index,
                   '--outFileNamePrefix', 'rna',
                   '--outSAMunmapped', 'Within',
+                  '--twopassMode', 'Basic',
                   '--quantMode', 'TranscriptomeSAM',
-                  '--outSAMattributes', 'NH', 'HI', 'AS', 'NM', 'MD',
-                  '--outFilterType', 'BySJout',
+                  '--outFilterMultimapScoreRange', '1',
                   '--outFilterMultimapNmax', '20',
-                  '--outFilterMismatchNmax', '999',
-                  '--outFilterMismatchNoverReadLmax', '0.04',
-                  '--alignIntronMin', '20',
-                  '--alignIntronMax', '1000000',
+                  '--outFilterMismatchNmax', '10',
+                  '--alignIntronMax', '500000',
                   '--alignMatesGapMax', '1000000',
-                  '--alignSJoverhangMin', '8',
+                  '--sjdbScore', '2',
                   '--alignSJDBoverhangMin', '1',
-                  '--sjdbScore', '1']
+                  '--genomeLoad', 'NoSharedMemory',
+                  '--limitBAMsortRAM', '100000000000',
+                  '--outFilterMatchNminOverLread', '0.33',
+                  '--outFilterScoreMinOverLread', '0.33',
+                  '--sjdbOverhang', '100',
+                  '--outSAMstrandField', 'intronMotif',
+                  '--outSAMattributes', 'NH', 'HI', 'NM', 'MD', 'AS', 'XS',
+                  '--outSAMunmapped', 'Within',
+                  '--outSAMheaderHD', '@HD', 'VN:1.4',
+                  '--alignEndsType', 'EndToEnd']
 
     # Modify parameters based on function arguments
     if sort:

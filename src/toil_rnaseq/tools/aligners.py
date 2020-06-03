@@ -46,13 +46,11 @@ def run_star(job, r1_id, r2_id, star_index_url, wiggle=False, sort=False, save_a
                   '--sjdbScore', '2',
                   '--alignSJDBoverhangMin', '1',
                   '--genomeLoad', 'NoSharedMemory',
-                  '--limitBAMsortRAM', '100000000000',
                   '--outFilterMatchNminOverLread', '0.33',
                   '--outFilterScoreMinOverLread', '0.33',
                   '--sjdbOverhang', '100',
                   '--outSAMstrandField', 'intronMotif',
                   '--outSAMattributes', 'NH', 'HI', 'NM', 'MD', 'AS', 'XS',
-                  '--outSAMunmapped', 'Within',
                   '--outSAMheaderHD', '@HD', 'VN:1.4',
                   '--alignEndsType', 'EndToEnd']
 

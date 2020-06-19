@@ -90,7 +90,7 @@ def _s3am_with_retry(num_cores, file_path, s3_url, mode='upload', s3_key_path=No
     raise RuntimeError('S3AM failed to {} after {} retries.'.format(mode, retry_count))
 
 
-def move_or_upload(config, files, enforce_ssec=True):
+def move_or_upload(config, files, enforce_ssec=False):
     """
     Move or upload file based on configuration settings
 
